@@ -3,17 +3,21 @@
 # A simple quiz program using dictionaries and lists
 
 # TODO: Create an empty dictionary to store words and their definitions
-
+vocab={}
 
 # TODO: Create two empty lists:
 # - One to store correctly answered words
 # - One to store incorrectly answered words
-
+correct_words=[]
+incorrect_words=[]
 
 # TODO: Create the add_word function that:
 # - Takes parameters: word (str) and definition (str)
 # - Adds the word and definition to the vocabulary dictionary
 # - Prints a message confirming the word was added
+def add_word()
+    dictionary[hola]=hello
+print
 
 
 # TODO: Create the take_quiz function that:
