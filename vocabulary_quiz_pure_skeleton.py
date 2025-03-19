@@ -39,8 +39,8 @@ def add_word(word, definition):
 
 def take_quiz(num_questions=5):
     import random 
-    correct_words=[]
-    incorrect_words=[]
+    correct_words.clear()11
+    incorrect_words.clear()
     if not vocab:
         print("No words in the vocabulary. Please add some words first.")
         return 0
@@ -48,7 +48,7 @@ def take_quiz(num_questions=5):
     quiz_words = random.sample(list(vocab.keys()), num_questions)
     score=0
     for word in quiz_words:
-        user_definition = input(f"What is the definition of '{word}'?")
+        user_definition = input(f"What is the definition of '{word}:'?")
         if user_definition == vocab[word]:
             score+=1
             print("Correct!")
