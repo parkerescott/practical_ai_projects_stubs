@@ -20,12 +20,16 @@ word_list = [
     "chemistry",
     "adventure"
 ]
-
+import random
 
 # TODO: Create a function to select a random word that:
 # - Takes no parameters
 # - Uses random.choice to select a random word from your word list
 # - Returns the selected word in lowercase
+
+def select_random_word():
+  selected_word = random.choice(word_list)
+  return selected_word.lower()
 
 
 # TODO: Create a function to initialize the game state that:
@@ -36,6 +40,14 @@ word_list = [
 #   - "word_completion": a string of underscores representing unguessed letters (e.g., "_ _ _ _")
 #   - "tries_remaining": number of incorrect guesses allowed (start with 6)
 
+def initialize_game_state(word):
+   game_state = {
+      "word" : word,
+      "guessed_letters": [],
+      "word_completion": "_" * len(word),
+      "tries_remaining": 6
+   }
+   return game_state
 
 # TODO: Create a function to display the game state that:
 # - Takes parameter: game_state (dict)
@@ -45,6 +57,12 @@ word_list = [
 # - Prints the letters that have been guessed so far
 # - Prints the number of tries remaining
 # ASCII art for hangman states
+
+def display_game_state(game_state):
+  print(HANGMAN_STAGES[6 - game_state['tries_remaining']])
+  print("".join(game_state['word_completion']))
+  print("Guessed Letters: " + ", ".join(game_state['guessed_letters']))
+  print("Tries Remaining: " + str(game_state['tries_remaining']))
 HANGMAN_STAGES = [
     '''
       +---+
@@ -103,7 +121,6 @@ HANGMAN_STAGES = [
           |
     ========='''
 ]
-
 
 
 
